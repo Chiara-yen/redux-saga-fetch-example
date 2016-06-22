@@ -8,13 +8,11 @@ import fetch from 'isomorphic-fetch'
 // this will fetch successed
 const URL = 'https://api.github.com/users/mralexgray/repos'
 
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
-
-function getData() {
+export function getData() {
   return fetch(URL).then(response => response.json())
 }
 
-function* fetchData() {
+export function* fetchData() {
   try {
     const data = yield call(getData);
     yield put({type: 'FETCH_SUCCEEDED', data});

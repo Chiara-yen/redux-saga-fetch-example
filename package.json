@@ -9,7 +9,7 @@
     "clean": "rimraf dist && rm -f dist/*",
     "deploy": "npm run clean && npm run build && npm run gh",
     "gh": "gh-pages -d dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "babel-node ./test/sagas.js | tap-spec"
   },
   "author": "chiara yen",
   "license": "MIT",
@@ -34,6 +34,8 @@
     "style-loader": "^0.13.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.1.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.5.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
